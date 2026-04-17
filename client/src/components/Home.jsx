@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import API from "../api/axios";
 import {useNavigate} from 'react-router-dom'
-
 function Home() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate=useNavigate()
   const role=localStorage.getItem("role")
-  const navigate = useNavigate();
   useEffect(() => {
     fetchProducts();
   }, []);
